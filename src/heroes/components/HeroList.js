@@ -1,22 +1,17 @@
+import { getHeroesByPublisher } from "../helpers/getHeroesByPublisher"
+import { HeroCard } from "./index";
+import { useMemo } from "react";
+export const HeroList = ({publisher}) => {
 
-export const HeroList = ({list}) => {
-
-    console.log(list);
-    let routeX = '../../assets/heroes/'
+    const heroes = useMemo(()=> getHeroesByPublisher(publisher), [publisher] )
     return(
     <>
-            <ul  >
-                {list.map((hero)=> {
-                    return(
-                    <li key={hero.id}>
-                        <p>
-                            Nombre: {hero.superhero}
-                        </p>
-                        <img src={`/assets/heroes/`+hero.id+`.jpg`}
-                        alt={`/src/assets/heroes/`+hero.id+`.jpg`} />
-                    </li>
-                )})}                
-            </ul>
+            <div className="row rows-cols-1 row-cols-md-3 g-3" >
+                {
+                    heroes.map(hero=> (
+                        <HeroCard key={hero.id} {...hero}/>
+                    ))}
+            </div>
         </>
         
     )
