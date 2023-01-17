@@ -2,7 +2,7 @@ import { Navigate } from "react-router-dom"
 
 export const HeroDetail = ({heroe, heroeToShow}) => {
     const {id,superhero,publisher,characters, alter_ego, first_appearance} = heroeToShow
-    const routeX = `assets/heroes/${id}.jpg`
+    const routeX = `/heroes/${ id }.jpg`
     return (<>
         <div className="row mt-5">
 

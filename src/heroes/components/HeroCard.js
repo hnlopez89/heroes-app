@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 
 export const HeroCard = ({id,superhero,publisher, alter_ego, first_appeareance, characters}) => {
-    const heroImageUrl = `/assets/heroes/${id}.jpg`
-    const heroImageUrl2 = "/assets/heroes/dc-batman.jpg"
+    const heroImageUrl = `/heroes/${ id }.jpg`
+    
     return(
         <div className="col animate__animated animate__fadeIn">
             <div className="card">
                 <div className="row no-gutters">
                     <p>Nombre: {superhero}</p>
-                    <div className="col-4">
-                        <img src={heroImageUrl2} className="card-img" alt={heroImageUrl}/>
+                    <div >
+                        <img src={heroImageUrl}  alt={heroImageUrl}/>
                     </div>
                     <div className="col-8">
                         <div className="card-body">
